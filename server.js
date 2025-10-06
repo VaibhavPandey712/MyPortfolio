@@ -7,8 +7,7 @@ import path from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// PostgreSQL connection
-const db = new pg.Client({
+ const db = new pg.Client({
     user: "postgres",
     host: "localhost",
     database: "world",
@@ -24,13 +23,11 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
-// Serve the main page
-app.get("/", (req, res) => {
+ app.get("/", (req, res) => {
     res.sendFile(join(__dirname, "index.html"));
 });
 
-// Handle form submission
-app.post("/submit", (req, res) => {
+ app.post("/submit", (req, res) => {
     const { name, college, mono, message } = req.body;
     const today = new Date().toISOString().split("T")[0];
 

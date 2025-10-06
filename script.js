@@ -1,9 +1,9 @@
-// Wait for DOM to be fully loaded
+ 
 
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Typing animation
+   
     const typingText = document.querySelector('.typing-text');
     const phrases = [
         'Full Stack Developer',
@@ -34,23 +34,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         if (!isDeleting && currentChar === phrase.length) {
-            typingSpeed = 2000; // Pause at end
+            typingSpeed = 2000; 
             isDeleting = true;
         } else if (isDeleting && currentChar === 0) {
             isDeleting = false;
             currentPhrase = (currentPhrase + 1) % phrases.length;
-            typingSpeed = 500; // Pause before starting new phrase
+            typingSpeed = 500;  
         }
         
         setTimeout(typeText, typingSpeed);
     }
     
-    // Start typing animation
+    
     typeText();
     
-    // Smooth scrolling navigation
-    // const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.section');
+     const sections = document.querySelectorAll('.section');
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -67,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Active navigation highlighting
     function updateActiveNav() {
         const scrollPosition = window.scrollY + 100;
         
@@ -89,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', updateActiveNav);
     
-    // Skill bars animation
     function animateSkillBars() {
         const skillBars = document.querySelectorAll('.skill-progress');
         
@@ -99,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Intersection Observer for animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -119,51 +114,49 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
     
-    // Competitive Programming Modal
    const competitiveProgrammingCard = document.querySelector('.competitive-programming');
     const modal = document.getElementById('projectModal');
     const modalBody = document.getElementById('modalBody');
     const closeModal = document.querySelector('.close');
     
-    // Competitive programming platforms data
     const platforms = {
         leetcode: {
             name: 'LeetCode',
-            url: 'https://leetcode.com/yourusername', // Replace with your actual profile
+            url: 'https://leetcode.com/yourusername', 
             icon: 'fas fa-code',
             description: 'Solve coding problems and prepare for technical interviews',
             color: '#FFA500'
         },
         codeforces: {
             name: 'Codeforces',
-            url: 'https://codeforces.com/profile/yourusername', // Replace with your actual profile
+            url: 'https://codeforces.com/profile/yourusername',  
             icon: 'fas fa-trophy',
             description: 'Competitive programming contests and problem solving',
             color: '#1F8ACB'
         },
         codechef: {
             name: 'CodeChef',
-            url: 'https://www.codechef.com/users/yourusername', // Replace with your actual profile
+            url: 'https://www.codechef.com/users/yourusername',  
             icon: 'fas fa-utensils',
             description: 'Programming contests and coding challenges',
             color: '#5B4638'
         },
         hackerrank: {
             name: 'HackerRank',
-            url: 'https://www.hackerrank.com/yourusername', // Replace with your actual profile
+            url: 'https://www.hackerrank.com/yourusername',  
             icon: 'fas fa-laptop-code',
             description: 'Coding challenges and skill assessments',
             color: '#00EA64'
         }
     };
     
-    // Add click event to competitive programming card
+     
     if (competitiveProgrammingCard) {
         competitiveProgrammingCard.addEventListener('click', function() {
             showCompetitiveProgrammingModal();
         });
         
-        // Add hover effect
+         
         competitiveProgrammingCard.style.cursor = 'pointer';
     }
     
@@ -210,11 +203,9 @@ document.addEventListener('DOMContentLoaded', function() {
         modalBody.innerHTML = modalContent;
         modal.style.display = 'block';
         
-        // Add click events to platform cards
-        const platformCards = document.querySelectorAll('.platform-card');
+         const platformCards = document.querySelectorAll('.platform-card');
         platformCards.forEach(card => {
-            // Add hover effects
-            card.addEventListener('mouseenter', function() {
+             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-5px) scale(1.05)';
                 this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.3)';
                 this.style.border = '2px solid rgba(255, 255, 255, 0.3)';
@@ -232,13 +223,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 icon.style.transform = 'scale(1) rotateY(0deg)';
             });
             
-            // Add click event to redirect
-            card.addEventListener('click', function() {
+             card.addEventListener('click', function() {
                 const platformKey = this.getAttribute('data-platform');
                 const platform = platforms[platformKey];
                 
-                // Add click animation
-                this.style.transform = 'scale(0.95)';
+                 this.style.transform = 'scale(0.95)';
                 
                 setTimeout(() => {
                     window.open(platform.url, '_blank');
@@ -248,8 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Close modal events
-    if (closeModal) {
+     if (closeModal) {
         closeModal.addEventListener('click', function() {
             modal.style.display = 'none';
         });
@@ -261,8 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Project cards functionality
-    const projectCards = document.querySelectorAll('.project-card');
+     const projectCards = document.querySelectorAll('.project-card');
     
     projectCards.forEach(card => {
         card.addEventListener('click', function() {
@@ -285,8 +272,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     'Order tracking and history',
                     'Admin dashboard for inventory management'
                 ],
-                github: '#', // Replace with actual GitHub link
-                demo: '#'    // Replace with actual demo link
+                github: '#',  
+                demo: '#'     
             },
             '2': {
                 title: 'Task Management App',
@@ -300,8 +287,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     'File attachments',
                     'Deadline notifications'
                 ],
-                github: '#', // Replace with actual GitHub link
-                demo: '#'    // Replace with actual demo link
+                github: '#',  
+                demo: '#'     
             },
             '3': {
                 title: 'Data Visualization Dashboard',
@@ -315,8 +302,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     'Responsive design',
                     'Custom filtering options'
                 ],
-                github: '#', // Replace with actual GitHub link
-                demo: '#'    // Replace with actual demo link
+                github: '#',  
+                demo: '#'     
             }
         };
         
@@ -377,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'block';
     }
     
-    // Email functionality
+    
     const emailElement = document.querySelector('.contact-item span');
     if (emailElement) {
         emailElement.addEventListener('click', function() {
@@ -387,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function() {
         emailElement.style.cursor = 'pointer';
     }
     
-    // Navbar scroll effect
+     
     let lastScrollTop = 0;
     const navbar = document.querySelector('.navbar');
     
@@ -395,15 +382,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down
+            
             navbar.style.transform = 'translateY(-100%)';
         } else {
-            // Scrolling up
-            navbar.style.transform = 'translateY(0)';
+             navbar.style.transform = 'translateY(0)';
         }
         
-        // Change navbar background on scroll
-        if (scrollTop > 50) {
+         if (scrollTop > 50) {
             navbar.style.background = 'rgba(255, 255, 255, 0.98)';
             navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
         } else {
@@ -414,8 +399,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop;
     });
     
-    // Parallax scrolling effect
-    window.addEventListener('scroll', function() {
+     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
         const parallaxElements = document.querySelectorAll('.profile-image');
         
@@ -425,8 +409,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add smooth hover effects to buttons
-    const buttons = document.querySelectorAll('.btn, .social-link');
+     const buttons = document.querySelectorAll('.btn, .social-link');
     buttons.forEach(button => {
         button.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-3px) scale(1.05)';
@@ -437,8 +420,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add click ripple effect
-    function createRipple(event) {
+     function createRipple(event) {
         const button = event.currentTarget;
         const circle = document.createElement('span');
         const diameter = Math.max(button.clientWidth, button.clientHeight);
@@ -457,25 +439,21 @@ document.addEventListener('DOMContentLoaded', function() {
         button.appendChild(circle);
     }
     
-    // Add ripple effect to buttons
-    buttons.forEach(button => {
+     buttons.forEach(button => {
         button.addEventListener('click', createRipple);
     });
     
-    // Keyboard navigation
-    document.addEventListener('keydown', function(e) {
+     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.style.display === 'block') {
             modal.style.display = 'none';
         }
     });
     
-    // Loading animation
-    window.addEventListener('load', function() {
+     window.addEventListener('load', function() {
         document.body.classList.add('loaded');
     });
     
-    // Console log for developers
-    console.log('%c🚀 Welcome to my portfolio!', 'color: #667eea; font-size: 20px; font-weight: bold;');
+     console.log('%c🚀 Welcome to my portfolio!', 'color: #667eea; font-size: 20px; font-weight: bold;');
     console.log('%cThanks for checking out the code!', 'color: #764ba2; font-size: 14px;');
     console.log('%cFeel free to reach out if you have any questions.', 'color: #333; font-size: 12px;');
 
